@@ -1,0 +1,12 @@
+== 0.1.2 2008-11-27
+
+* Added Proc support for rules
+
+== 0.1.1 2008-11-27
+
+* Removed JSON dependency. You'll have to parse the rules and input before you send it in.
+* Fixed mixed case replacement expressions
+
+== 0.1.0 2008-11-25
+
+* Initial release

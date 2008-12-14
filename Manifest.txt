@@ -1,0 +1,6 @@
+History.txt
+README.txt
+Rakefile
+lib/jsont.rb
+spec/jsont.rb
+spec/spec.opts
