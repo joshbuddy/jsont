@@ -7,7 +7,7 @@ require 'spec/rake/spectask'
 Hoe.new('jsont', JsonT::VERSION) do |p|
   p.author = 'Joshua Hull'
   p.email = 'joshbuddy@gmail.com'
-  p.summary = 'Ruby implementation'
+  p.summary = 'Ruby implementation of http://goessner.net/articles/jsont/'
   p.description = p.paragraphs_of('README.txt', 2..2).join("\n\n")
   p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
 end
