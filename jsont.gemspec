@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jsont}
-  s.version = "0.5.11"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Joshua Hull"]
@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
     "README.txt",
     "Rakefile",
     "VERSION",
-    "VERSION.yml",
     "lib/jsont.rb",
     "spec/array.rb",
     "spec/hash.rb",
