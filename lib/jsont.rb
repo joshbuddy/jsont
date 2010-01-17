@@ -1,21 +1,21 @@
-$:.unshift(File.dirname(__FILE__)) unless
-  $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
+$LOAD_PATH << File.expand_path(File.dirname(__FILE__))
 
 class JsonT
-  VERSION = '0.1.3'
+
+  attr_reader :parent, :G
   
   def initialize(rules)
     @rules = rules
     @rules.each do |r,v| 
       if r[0,4] != 'self'
-        @rules["self.#{r}"] = @rules.delete(r)
+        rules["self.#{r}"] = rules.delete(r)
       end
     end
   end
   
   def transform(target)
     @parent = target
-    apply!('self',@parent)
+    apply!('self', parent)
   end
   
   def apply!(target_path, target)
@@ -30,7 +30,7 @@ class JsonT
       end
     end
     
-    if (rule = @rules[target_path])
+    if (rule = rules[target_path])
       if rule.respond_to?(:call)
         rule.call(target, :target_path => target_path)
       else
@@ -40,7 +40,7 @@ class JsonT
           when ?$
             target
           else
-            @parent
+            parent
           end
           path.gsub!(/^\$\.?/,'')
 

@@ -1,0 +1,19 @@
+= JsonT
+
+== Description
+
+Implemtation of javascript JsonT transformation library. http://goessner.net/articles/jsont/
+Conforms to most of the JsonT spec minus the javascript function ability. (Have to use Proc's instead of javascript function)
+
+== Install
+
+sudo gem install jsont
+
+== Usage
+
+  >> JsonT.new({'self' => '<div>{$.test}</div>', 'test' = > '<p>{$.x} {$.y}</p>'}).transform({'test' = > {'x' = > 1, 'y' = > 2}})
+  << <div><p>1 2</p></div>
+
+  >> JsonT.new({'self' => '<div>{$.test}</div>', 'test' = > Proc.new{|t, opts| t['x']+t['y']}}).transform({'test' = > {'x' = > 1, 'y' = > 2}})
+  << <div>3</div>
+
