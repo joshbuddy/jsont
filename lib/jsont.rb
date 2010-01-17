@@ -2,7 +2,7 @@ $LOAD_PATH << File.expand_path(File.dirname(__FILE__))
 
 class JsonT
 
-  attr_reader :parent, :G
+  attr_reader :parent, :rules
   
   def initialize(rules)
     @rules = rules
