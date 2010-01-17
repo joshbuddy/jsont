@@ -7,7 +7,7 @@ class JsonT
   def initialize(rules)
     @rules = rules
     @rules.each do |r,v| 
-      if r[0,4] != 'self'
+      if r.index('self') != 0
         rules["self.#{r}"] = rules.delete(r)
       end
     end
